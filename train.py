@@ -161,7 +161,7 @@ plt.suptitle("Step 3 — Boxplots BEFORE Outlier Removal",
              fontsize=13, fontweight="bold")
 plt.tight_layout()
 save(fig, "02_boxplot_before.png")
-
+# this is spartanse
 # ── Remove outliers using IQR (3 × IQR fence) ─────────────────────
 before = len(df)
 mask   = pd.Series([True] * len(df), index=df.index)
