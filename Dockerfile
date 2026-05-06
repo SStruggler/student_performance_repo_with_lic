@@ -5,7 +5,7 @@ FROM python:3.11-slim
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PORT=8000 \
-    STREAMLIT_PORT=8501
+    API_PORT=8001
 
 # ── System Dependencies ───────────────────────────────────────────────────────
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -31,7 +31,7 @@ COPY start.sh /app/start.sh
 RUN chmod +x /app/start.sh
 
 # ── Expose Ports ─────────────────────────────────────────────────────────────
-EXPOSE 8000 8501
+EXPOSE 8000
 
 # ── Entrypoint ────────────────────────────────────────────────────────────────
 CMD ["/app/start.sh"]

@@ -221,7 +221,7 @@ st.markdown("""
 # ─── API Config ────────────────────────────────────────────────────────────────
 API_URL = st.sidebar.text_input(
     "API Base URL",
-    value="http://localhost:8000",
+    value="http://localhost:8001",
     help="URL where your FastAPI server is running"
 )
 
