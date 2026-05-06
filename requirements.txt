@@ -1,6 +1,7 @@
 fastapi[standard]
 starlette>=0.35.0,<0.36.0
 pydantic
+uvicorn
 scikit-learn
 pandas
 joblib
@@ -9,5 +10,4 @@ matplotlib
 seaborn
 streamlit
 pyarrow
-streamlit 
 requests
