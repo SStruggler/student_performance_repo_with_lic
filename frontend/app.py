@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import requests
 import json
@@ -219,10 +220,16 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ─── API Config ────────────────────────────────────────────────────────────────
-# Use Railway private networking for secure, fast backend communication
+# Use Railway private networking for secure, fast backend communication.
+# Allow overriding for local development via BACKEND_URL.
+DEFAULT_BACKEND = os.getenv(
+    "BACKEND_URL",
+    "http://backend.railway.internal:8001"
+)
+
 API_URL = st.sidebar.text_input(
     "API Base URL",
-    value="http://backend.railway.internal:8001",
+    value=DEFAULT_BACKEND,
     help="Railway private networking URL for FastAPI backend (or override for local development)"
 )
 

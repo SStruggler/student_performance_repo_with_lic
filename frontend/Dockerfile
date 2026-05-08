@@ -21,7 +21,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # ── Expose Port ────────────────────────────────────────────────────────────────
-EXPOSE 8000
+# Railway will inject the runtime PORT value, so 8001 is only a default for local builds.
+EXPOSE 8001
 
-# ── Start Streamlit ───────────────────────────────────────────────────────────
-CMD ["streamlit", "run", "app.py", "--server.port=8000", "--server.address=0.0.0.0", "--server.headless=true"]
+# ── Start Streamlit ───────────────────────────────────────────────────────────────
+# Use shell form so the $PORT environment variable expands at runtime.
+CMD streamlit run app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
