@@ -219,10 +219,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ─── API Config ────────────────────────────────────────────────────────────────
+# Use Railway private networking for secure, fast backend communication
 API_URL = st.sidebar.text_input(
     "API Base URL",
-    value="http://localhost:8001",
-    help="URL where your FastAPI server is running"
+    value="http://backend.railway.internal:8001",
+    help="Railway private networking URL for FastAPI backend (or override for local development)"
 )
 
 # ─── Input Panel ───────────────────────────────────────────────────────────────
